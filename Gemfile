@@ -2,6 +2,8 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.11'
 gem 'sqlite3', '1.3.3'
+gem 'autotest', '4.4.6'
+gem 'autotest-rails-pure', '4.1.2'
 
 group :development do
    gem 'rspec-rails', '2.6.1'
