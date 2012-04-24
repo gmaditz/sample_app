@@ -44,6 +44,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(:page => params[:page])
     @title = @user.name
   end
   
@@ -59,10 +60,6 @@ class UsersController < ApplicationController
   end
   
   private
-  
-    def authenticate
-      deny_access unless signed_in?
-    end
     
     def correct_user
       @user = User.find(params[:id])
@@ -75,7 +72,7 @@ class UsersController < ApplicationController
     
     def signed_in_user
       if signed_in?
-        flash[:notice] = "You are already logged and cannot create a new account"
+        flash[:notice] = "You are already logged in and cannot create a new account"
         redirect_to(root_path)
       end
     end
