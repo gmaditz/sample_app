@@ -128,8 +128,8 @@ td.main {
 td.sidebar {
   width: 30%;
   padding: 1em;
-  vertical-aligh: top;
-  bachgroud: #ffc;
+  vertical-align: top;
+  background: #ffc;
 }
 
 .profile img.gravatar {
